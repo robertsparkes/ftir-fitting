@@ -1,4 +1,4 @@
-# ftir-fitting
+# ftir-fitting-pvc
 
 A script for automatically analysing FTIR spectra of PVC to determine 
 the contribution of four raw materials to the overall formulation
