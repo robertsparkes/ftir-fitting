@@ -30,7 +30,7 @@ Column 1 is the wavenumber, column 2 is the intensity.
 If data is presented in comma separated files, the script "**csvtxt.sh**" can be used to convert them into space-separated text files. 
 Original .csv and .CSV files are moved into a new folder called "CSV".
 
-> $ csvtxt.sh mydata.csv
+> $ ./csvtxt.sh mydata.csv
 
 #### Cropping and scaling input data
 
@@ -40,7 +40,7 @@ If necessary, edit the script "**crop_baseline_scale.sh**" to give the correct m
 
 The script "**crop_baseline_scale.sh**" requires inputs of one or more data files (two column, space sparated). "*" can be used as a wildcard. Example:
 
-> $ crop_baseline_scale.sh mydata.txt 
+> $ ./crop_baseline_scale.sh mydata.txt 
 
 The script does the following operations:
 - Datafile is cropped to only include x-values in the range defined at the start of the script
@@ -58,12 +58,12 @@ The script "**prepftir.sh**" should be run before the first files in a given fol
 This script creates folders and initiates some datafiles for the subsequent analyses.
 Execute the script within the "crop_scaled" folder
 
-> $ prepftir.sh
+> $ ./prepftir.sh
 
 ### Script Execution
 
 The script executes from the command line, in the form
-> $ ftir-fitting-pvc.sh [options] [input files]
+> $ ./ftir-fitting-pvc.sh [options] [input files]
 
 The options are
 -q Quiet mode - graphs appear on screen but immediately disappear
@@ -74,10 +74,19 @@ After analysis the results are written to a file entitled "acombinedresults.txt"
 already in this file will be ignored and not re-fitted. The "-d" option removes all results 
 from "acombinedresults.txt" and allows previously fitted files to be analysed.
 
-Example code to prepare for and then analyse all samples with "specimen" at the start of the file name:
-> $ prepftir.sh
+Example code to prepare and then analyse a series of data files with "specimen" at the start of the file name, originally in .CSV format:
+
+> $ ./csvtxt.sh specimen*.CSV
+>
+> $ ./crop_scale_baseline.sh specimen*.txt
+>
+> $ cp FTIR_standards_scaled.txt crop_scaled
+>
+> $ cd crop_scaled
+>
+> $ ./prepftir.sh
 > 
-> $ ftir-fitting-pvc.sh -d -q specimen*.txt
+> $ ./ftir-fitting-pvc.sh -d -q specimen*.txt
 
 ### Outputs
 
