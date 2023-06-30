@@ -71,35 +71,15 @@ After analysis the results are written to a file entitled "acombinedresults.txt"
 already in this file will be ignored and not re-fitted. The "-d" option removes all results 
 from "acombinedresults.txt" and allows previously fitted files to be analysed.
 
-Example code to prepare for and then analyse all samples with "taiwan" in the file name:
+Example code to prepare for and then analyse all samples with "specimen" at the start of the file name:
 > $ prepftir.sh
 > 
-> $ sparkesfitraman.sh -d -q taiwan*.txt
+> $ ftir-fitting-pvc.sh -d -q specimen*.txt
 
 ### Outputs
 
-The script outputs three graphs, containing the raw spectra with linear background identified,
+The script outputs two graphs, containing the raw spectra with linear background identified,
 raw spectra with overall fit superimposed and a residual shown, and the spectra following the fitting,
 showing the fitted peaks after the background has been removed. 
 
 The fitting parameters are written to a summary file (acombinedresults.txt) for further analysis
-
-
-## Advanced Operation
-
-### Generating parameters for the standard raw materials (not required for basic operation)
-
-The curves for each of the four standards are defined by fitting Voigt peaks to Raman data
-collected from a pure sample of each raw material. Peak locations, heights and widths are
-currently hard-coded into the main script.
-
-If you wish to generate standard curves independently, scripts for doing this are incldued in 
-the repository:
-raman-standard-PVC.sh
-raman-standard-carbonate.sh
-raman-standard-DOTP.sh
-raman-standard-p4008.sh
-
-The main script will then need to be edited to ensure:
-- The right number of peaks are generated for each raw material
-- The heights, locations and widths of each peak for each material are correct
