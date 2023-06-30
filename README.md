@@ -3,7 +3,7 @@
 A script for automatically analysing FTIR spectra of PVC to determine 
 the contribution of four raw materials to the overall formulation
 
-The main script, **ftir-fitting-pvc.sh** analyses FTIR spectra of a PVC mixture fitting the sample data against
+The main script, "**ftir-fitting-pvc.sh**" analyses FTIR spectra of a PVC mixture fitting the sample data against
 defined spectra of four standards, plus a linear background. Other scripts in this repository are 
 for pre-processing the data and generating required files in the working directory.
 
