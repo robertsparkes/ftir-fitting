@@ -51,6 +51,9 @@ Processed data is moved to the folder "crop_scaled". Original data is preserved 
 
 ### Preparing the working directory
 
+Ensure that the datafile containing the FTIR spectra of the standards is present in the "crop_scaled" folder 
+and is named "**FTIR_standards_scaled.txt**"
+
 The script "**prepftir.sh**" should be run before the first files in a given folder are analysed.
 This script creates folders and initiates some datafiles for the subsequent analyses.
 Execute the script within the "crop_scaled" folder
